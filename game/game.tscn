@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://b5aifdj8dnhag"]
+[gd_scene load_steps=7 format=4 uid="uid://b5aifdj8dnhag"]
 
 [ext_resource type="PackedScene" uid="uid://c2pr0uy622hm7" path="res://player/player.tscn" id="1_80nbo"]
 [ext_resource type="TileSet" uid="uid://b5yhmpswbkyp7" path="res://tiles/background.tres" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://dg1rsftxw8627" path="res://game/Game.cs" id="1_fc0e3"]
 [ext_resource type="TileSet" uid="uid://bffxcmn14y2l5" path="res://tiles/foreground.tres" id="2_feb5d"]
+[ext_resource type="AudioStream" uid="uid://cp1nqsrx8ijxw" path="res://score.wav" id="5_dxrkv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
 size = Vector2(20, 504)
@@ -33,6 +34,11 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 
+[node name="ScoreText" type="Label" parent="UI"]
+offset_right = 61.0
+offset_bottom = 23.0
+text = "Score: 0"
+
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Background" type="TileMapLayer" parent="Map"]
@@ -54,10 +60,15 @@ position = Vector2(414, -252)
 
 [node name="Despawn" type="Area2D" parent="."]
 position = Vector2(-432, -252)
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Despawn"]
 position = Vector2(0, 252)
 shape = SubResource("RectangleShape2D_fc0e3")
+
+[node name="ScoreSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dxrkv")
 
 [connection signal="Hit" from="Player" to="." method="OnPlayerHit"]
 [connection signal="timeout" from="SpawnTimer" to="." method="OnSpawn"]
