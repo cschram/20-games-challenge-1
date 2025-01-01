@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://ytyj7htnwbsg"]
 
-[ext_resource type="Script" uid="uid://jenjtk3en3mm" path="res://Obstacle.cs" id="1_aubd6"]
-[ext_resource type="TileSet" uid="uid://bffxcmn14y2l5" path="res://foreground.tres" id="1_sl1jc"]
+[ext_resource type="Script" uid="uid://jenjtk3en3mm" path="res://obstacle/Obstacle.cs" id="1_aubd6"]
+[ext_resource type="TileSet" uid="uid://bffxcmn14y2l5" path="res://tiles/foreground.tres" id="1_sl1jc"]
 
 [node name="Obstacle" type="Node2D"]
 script = ExtResource("1_aubd6")

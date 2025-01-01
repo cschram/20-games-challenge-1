@@ -4,8 +4,4 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>GamesChallenge1</RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Content Include="LICENSE.md" />
-    <Content Include="README.md" />
-  </ItemGroup>
 </Project>

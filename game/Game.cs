@@ -14,7 +14,7 @@ public partial class Game : Node2D
         _gameOverText = GetNode<Label>("UI/GameOverText");
         _spawnTimer = GetNode<Timer>("SpawnTimer");
         _spawnPoint = GetNode<Node2D>("SpawnPoint");
-        _obstacleScene = ResourceLoader.Load<PackedScene>("res://obstacle.tscn");
+        _obstacleScene = ResourceLoader.Load<PackedScene>("res://obstacle/obstacle.tscn");
     }
 
     private void OnPlayerHit()
